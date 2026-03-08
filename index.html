@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KATANA — Modern Sushi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,900;1,900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0a0a0a;
+            --accent: #c4d600; /* Wasabi Green */
+            --text: #e5e5e5;
+            --muted: #666;
+            --serif: 'Playfair Display', serif;
+            --mono: 'Space Mono', monospace;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--mono);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Subtile Textur */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: url('https://grainy-gradients.vercel.app/noise.svg');
+            opacity: 0.03;
+            pointer-events: none;
+            z-index: 100;
+        }
+
+        nav {
+            position: fixed;
+            top: 0; width: 100%;
+            padding: 2rem 5vw;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 50;
+        }
+
+        .logo {
+            font-family: var(--serif);
+            font-size: 1.8rem;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+        .logo span { color: var(--accent); }
+
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 10vw;
+            position: relative;
+        }
+
+        .hero-title {
+            font-family: var(--serif);
+            font-size: clamp(3rem, 12vw, 10rem);
+            line-height: 0.85;
+            font-style: italic;
+            margin-left: -0.5vw;
+        }
+
+        .hero-sub {
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            max-width: 400px;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .knife-line {
+            position: absolute;
+            bottom: 15vh;
+            right: 0;
+            width: 70%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent));
+        }
+
+        section { padding: 10vw; }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 2rem;
+        }
+
+        .card {
+            grid-column: span 6;
+            background: #111;
+            padding: 4rem 3rem;
+            position: relative;
+            transition: 0.4s ease;
+        }
+
+        .card:hover { border-top: 1px solid var(--accent); }
+
+        .card h3 {
+            font-family: var(--serif);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .price { color: var(--accent); font-size: 0.8rem; margin-bottom: 1rem; display: block; }
+
+        .cta {
+            display: inline-block;
+            padding: 1rem 3rem;
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            margin-top: 5rem;
+            transition: 0.3s;
+        }
+
+        .cta:hover { background: var(--accent); color: var(--bg); }
+
+        @media (max-width: 768px) {
+            .card { grid-column: span 12; }
+            .hero-title { font-size: 4rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">KATA<span>NA</span></div>
+        <div style="font-size: 0.6rem; letter-spacing: 2px;">TOKYO / HAMBURG</div>
+    </nav>
+
+    <header>
+        <h1 class="hero-title">The Art of<br>Precision.</h1>
+        <p class="hero-sub">Hand-crafted omakase where mastery meets digital aesthetics.</p>
+        <div class="knife-line"></div>
+    </header>
+
+    <section>
+        <div class="grid">
+            <div class="card">
+                <span class="price">OMAKASE 01</span>
+                <h3>Bluefin O-Toro</h3>
+                <p>7-day aged fatty tuna. Pure umami precision.</p>
+            </div>
+            <div class="card" style="margin-top: 4rem;">
+                <span class="price">OMAKASE 02</span>
+                <h3>Hokkaido Uni</h3>
+                <p>Sweet sea urchin, served on hand-warmed shari.</p>
+            </div>
+        </div>
+        
+        <div style="text-align: center;">
+            <a href="#" class="cta">RESERVE A SEAT</a>
+        </div>
+    </section>
+
+    <footer style="padding: 5vw 10vw; border-top: 1px solid #222; font-size: 0.6rem; color: #444;">
+        © 2026 YOUNG CREATIVES — YUNAI DESIGN SYSTEM
+    </footer>
+</body>
+</html>
